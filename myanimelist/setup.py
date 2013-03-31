@@ -38,10 +38,10 @@ else:
 
 setup(name='malparser',
       version='1.0',
-      description='MAL Parser',
-      long_description=open('README.md').read(),
+      description='Python package to access the MyAnimeList Anime',
+      long_description=open('README.rst').read(),
       author='Anders Jensen',
-      license='LICENSE.txt',
+      license='MIT',
       author_email='andersandjensen+webparsers@gmail.com',
       url='https://github.com/JohnDoee/',
       packages=['malparser', 'malparser.test'],
