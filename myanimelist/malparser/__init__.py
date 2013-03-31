@@ -1,0 +1,1 @@
+from malparser.anime import Anime
