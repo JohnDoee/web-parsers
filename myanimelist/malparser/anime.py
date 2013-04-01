@@ -58,13 +58,36 @@ class Anime(object):
         self.statistics = statistics = {}
         self.related_anime = related_anime = {}
         
-        num2int = lambda x:int(x.replace(',', ''))
+        def duration2int(x):
+            runtime = 0
+            hours = re.findall(r'(\d+) hr', x)
+            minutes = re.findall(r'(\d+) min', x)
+            if hours:
+                try:
+                    runtime += int(hours[0])*60
+                except ValueError:
+                    pass
+            
+            if minutes:
+                try:
+                    runtime += int(minutes[0])
+                except ValueError:
+                    pass
+            
+            return runtime
+        
+        def num2int(x):
+            try:
+                return int(x.replace(',', ''))
+            except ValueError:
+                return None
+        
         num2dec = lambda x:Decimal(x)
         strip2int = lambda x:int(x.strip('#'))
         
         loop_elements = [
             ('Alternative Titles', True, [], alternative_titles, {}),
-            ('Information', False, ['Producers', 'Genres'], info, {}),
+            ('Information', False, ['Producers', 'Genres'], info, {'Episodes': num2int, 'Duration': duration2int}),
             ('Statistics', False, [], statistics, {'Favorites': num2int, 'Members': num2int, 'Popularity': strip2int, 'Ranked': strip2int, 'Score': num2dec}),
         ]
         

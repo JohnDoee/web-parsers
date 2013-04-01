@@ -34,8 +34,8 @@ class TestAnime(unittest.TestCase):
         
         self.assertEqual(anime.cover, 'http://cdn.myanimelist.net/images/anime/3/29625.jpg', 'Wrong cover URL')
         self.assertEqual(anime.info, {'Aired': 'Apr  9, 2007 to Sep  17, 2007',
-                                      'Duration': '24 min. per episode',
-                                      'Episodes': '24',
+                                      'Duration': 24,
+                                      'Episodes': 24,
                                       'Genres': [{'id': 4, 'name': 'Comedy'},
                                                  {'id': 20, 'name': 'Parody'},
                                                  {'id': 23, 'name': 'School'},
@@ -74,3 +74,8 @@ class TestAnime(unittest.TestCase):
         anime = AnimeDummy(2904)
         anime.fetch()
         self.assertEqual(anime.title, 'Code Geass: Hangyaku no Lelouch R2', 'Was not fetched properly')
+    
+    def test_long_anime(self):
+        anime = AnimeDummy(585)
+        anime.fetch()
+        self.assertEqual(anime.info['Duration'], 111, 'Wrong duration found')
