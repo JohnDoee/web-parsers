@@ -1,8 +1,10 @@
 MAL Parser
 ==========
 
-Library to parse `MyAnimeList <http://myanimelist.net>`_ pages, contains
-lots more features than un-official API
+Library to parse `MyAnimeList <http://myanimelist.net>`_ pages, it extracts
+more than the un-official API
+
+It can parse both Manga and Anime.
 
 Help and stuff
 --------------
