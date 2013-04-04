@@ -11,7 +11,7 @@ setup(name='malparser',
       author_email='johndoee+malparser@tidalstream.org',
       url='https://github.com/JohnDoee/',
       packages=['malparser', 'malparser.test'],
-      package_data={'malparser.test': ['testfiles/*.html']},
+      package_data={'malparser.test': ['testfiles/*/*.html']},
       install_requires=['lxml'],
       classifiers=[
         'Development Status :: 4 - Beta',
