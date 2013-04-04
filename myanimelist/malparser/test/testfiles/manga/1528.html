@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	<title>Code Geass: Hangyaku no Lelouch - MyAnimeList.net</title>
+    <meta name="Description" content="Start cataloging anime you've watched or manga you've read. Browse through our extensive anime and manga database. Get anime or manga suggestions, recommendations and reviews. View top rated anime and manga. Create anime and manga favorites. Tons more too!" />
+    <meta name="Keywords" content="anime, animelist, myanimelist, anime list, log anime seen, catalog anime watched, anime reviews, top anime, anime characters, favorite anime, anime discussion, anime information, manga series, manga information, top manga, mangalist, manga list, manga, manga reviews, voice actors, seiyuu" />
+    <meta name="Author" content="Garrett Gyssler">
+	
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cdn.myanimelist.net/js/hover.v5.js"></script>
+		<script type="text/javascript" src="http://cdn.myanimelist.net/js/jquery.fancybox.pack.v1.js"></script>
+	
+		<script type="text/javascript" src="http://cdn.myanimelist.net/js/fav.js"></script>
+		
+				<script type="text/javascript" src="http://cdn.myanimelist.net/js/fav.js"></script>
+				<script type="text/javascript" src="http://cdn.myanimelist.net/js/reviews.v2.js"></script>
+				<script type="text/javascript" src="http://cdn.myanimelist.net/js/forum.v12.js"></script>
+				<script type="text/javascript" src="http://cdn.myanimelist.net/js/mangainfo.v4.js"></script>
+				<link rel="stylesheet" href="http://cdn.myanimelist.net/css/forums.v5.css" type="text/css" />
+				<link rel="stylesheet" href="http://cdn.myanimelist.net/css/reviews.v1.css" type="text/css" />
+				<link rel="stylesheet" href="http://cdn.myanimelist.net/css/myanimelist.v44.css" type="text/css" />
+			<link rel="stylesheet" type="text/css" href="http://cdn.myanimelist.net/css/mal.ridlayout.css" />
+	<script type="text/javascript" src="http://cdn.myanimelist.net/js/myanimelist.v18.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://cdn.myanimelist.net/css/jquery.fancybox.v3.css" />
+	<link rel="stylesheet" type="text/css" href="http://cdn.myanimelist.net/css/dialog.v1.css" />
+	<link rel="search" type="application/opensearchdescription+xml" href="http://cdn.myanimelist.net/plugins/myanimelist.xml" title="MyAnimeList" />
+	
+	<link rel="shortcut icon" href="http://cdn.myanimelist.net/images/faviconv5.ico" />
+	
+	<!-- BEGIN TRIGGER TAG INITIALIZATION -->
+	<script type="text/javascript" src="http://cdn.triggertag.gorillanation.com/js/triggertag.js"></script>
+	<script type="text/javascript">getTrigger('4834');</script>
+	<!-- END TRIGGER TAG INITIALIZATION -->
+	<!-- GAM HEADER SCRIPT -->
+		<script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js">
+		</script>
+		<script type="text/javascript">
+		GS_googleAddAdSenseService("ca-pub-1304704158939332");
+		GS_googleEnableAllServices();
+		</script>
+		<script type="text/javascript">
+		GA_googleUseIframeRendering();
+		</script>
+	<!-- END OF GAM HEADER SCRIPT -->
+	
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-369102-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body onload="">
+<div id="myanimelist">
+
+
+	<div id="headerSmall">
+		<a href="/">MyAnimeList.net</a>
+	</div>
+	
+<div id="menu">
+    
+    <div id="menu_right">
+    	
+        <div id="searchBar">
+
+        <input type="text" class="inputtext" id="topSearchText" value="Search" onkeydown="return ts_checkEnter(event);" size="30" /> 
+        <select id="topSearchValue" class="inputtext" onchange="ts_selection();">
+        <option value="0">Anime</option>
+        <option value="1">Manga</option>
+        <option value="2">Characters</option>
+        <option value="6">People</option>
+        <option value="3">Fansub Groups</option>
+        <option value="4">Clubs</option>
+        <option value="5">Users</option>
+        </select>
+        
+        <input type="image" src="http://cdn.myanimelist.net/images/magnify.gif" value="Search" onclick="ts_subSearch(5);" />
+        
+        </div>
+        
+	</div>
+	
+	<div id="menu_left">
+		<ul id="nav">
+						<li class="small"><a href="/anime.php">Anime</a>
+				<ul class="wider">
+										<li><a href="/reviews.php?t=anime">Reviews</a></li>
+					<li><a href="/recommendations.php?s=recentrecs&t=anime">Recommendations</a></li>
+					<li><a href="/topanime.php">Top Anime</a></li>
+					<li><a href="/fansub-groups.php">Fansub Groups</a></li>
+				</ul>
+			</li>
+			<li class="small"><a href="/manga.php">Manga</a>
+				<ul class="wider">
+										<li><a href="/reviews.php?t=manga">Reviews</a></li>
+					<li><a href="/recommendations.php?s=recentrecs&t=manga">Recommendations</a></li>
+					<li><a href="/topmanga.php">Top Manga</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Community</a>
+				<ul>
+					<li><a href="/forum/">Forums</a></li>
+					<li><a href="/clubs.php">Clubs</a></li>
+					<li><a href="/blog.php">Blogs</a></li>
+					<li><a href="/users.php">Users</a></li>
+				</ul>
+			</li>
+			<li class="medium"><a href="#">Industry</a>
+				<ul class="wide">
+					<li><a href="/people.php">People</a></li>
+					<li><a href="/character.php">Characters</a></li>
+					<li><a href="/news.php">News</a></li>
+					<li><a href="/favorites.php">Top Favorites</a></li>
+				</ul>
+			</li>
+			
+			<li class="tiny"><a href="/register.php">Join</a></li>
+			<li class="smaller"><a href="/ajaxtb.php?login" id="malLogin">Login</a></li>
+						</ul>
+	</div>
+</div>
+
+<div id="contentWrapper">
+
+	<div id="roadblock">
+				<div class="ad230">
+						<script type="text/javascript">
+						if ((typeof(f325922)=='undefined' || f325922 > 0) ) {
+						if(typeof(gnm_ord)=='undefined') gnm_ord=Math.random()*10000000000000000; if(typeof(gnm_tile) == 'undefined') gnm_tile=1;
+						document.write('<scr'+'ipt src="http://n4403ad.doubleclick.net/adj/gn.cr.myanimelist.net/ros;sect=ros;sz=230x90,963x90;tile='+(gnm_tile++)+';ord='+gnm_ord+'?" type="text/javascript"></scr'+'ipt>');
+						} else {
+							GA_googleFillSlotWithSize("ca-pub-1304704158939332", "myanimelist_ros_230x90", 230, 90);
+						}
+						</script>
+						</div>
+				<div class="ad728">
+						<!-- 728x90 -->
+						<script type="text/javascript">
+						  if (typeof(gnm_ord)=='undefined' || (typeof(ad963_enabled)!= 'undefined' && ad963_enabled == false)) gnm_ord=Math.random()*10000000000000000;
+						  if (typeof(gnm_tile) == 'undefined') gnm_tile=1;
+						  document.write('<scr'+'ipt src="http://n4403ad.doubleclick.net/adj/gn.cr.myanimelist.net/ros;sect=ros;sz=728x90,970x90;dga=;dgg=;tile='+(gnm_tile++)+';ord=' + gnm_ord + ';?" type="text/javascript"></scr' + 'ipt>');
+						</script>
+						</div>
+				</div>
+	<h1><div style="float: right; font-size: 13px;">Ranked #2109</div>Code Geass: Hangyaku no Lelouch <span style="font-weight: normal;"><small>(Manga)</small></span></h1>
+	<div id="content">
+	
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="borderClass" width="225" style="border-width: 0 1px 0 0;" valign="top"><div style="text-align: center;"><a href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/pic&pid=27730"><img src="http://cdn.myanimelist.net/images/manga/5/27730.jpg" alt="Code Geass: Hangyaku no Lelouch" align="center"></a></div><div id="profileRows"><a href="#addtolistanchor" onclick="myinfo_toggleAdd();">Add to My List</a><a href="javascript:void(0);" onclick="fav_clicker(1,2,1528);" style="font-weight: normal;"><span id="favOutput">Add to Favorites</span></a><a href="javascript:doedit(1528);">Edit Manga Information</a></div>
+<div id="editdiv" style="display: none; margin-bottom: 16px;">
+<form method="GET" action="http://myanimelist.net/dbchanges.php" style="display: inline;">
+<input type="hidden" name="mid" value="1528">
+<div class="spaceit_pad">What would you like to edit?</div>
+<select name="t" class="inputtext">
+<option value="synopsis">Synopsis<option value="pic">Picture<option value="chapvol">Chapters/Volumes<option value="pubdates">Publishing Dates<option value="relations">Relations<option value="type">Type
+</select> &nbsp;<input type="submit" value="Go" class="inputButton">
+</form>
+</div>
+<h2>Alternative Titles</h2><div class="spaceit_pad"><span class="dark_text">English:</span> Code Geass: Lelouch of the Rebellion</div><div class="spaceit_pad"><span class="dark_text">Japanese:</span> コードギアス 反逆のルルーシュ</div><br />
+	<h2>Information</h2>
+	
+	<div><span class="dark_text">Type:</span> Manga</div>
+	<div class="spaceit"><span class="dark_text">Volumes:</span> 8
+	</div>
+	<div><span class="dark_text">Chapters:</span> 38
+	</div>
+	<div class="spaceit"><span class="dark_text">Status:</span> Finished</div>
+	<div><span class="dark_text">Published:</span> Oct 2006 to 2010</div><div class="spaceit"><span class="dark_text">Genres:</span>
+	  <a href="http://myanimelist.net/manga.php?genre[]=1">Action</a>, <a href="http://myanimelist.net/manga.php?genre[]=8">Drama</a>, <a href="http://myanimelist.net/manga.php?genre[]=18">Mecha</a>, <a href="http://myanimelist.net/manga.php?genre[]=23">School</a>, <a href="http://myanimelist.net/manga.php?genre[]=24">Sci-Fi</a>, <a href="http://myanimelist.net/manga.php?genre[]=25">Shoujo</a>, <a href="http://myanimelist.net/manga.php?genre[]=37">Supernatural</a>, <a href="http://myanimelist.net/manga.php?genre[]=38">Military</a></div><div><span class="dark_text">Authors:</span>
+		<a href="http://myanimelist.net/people/3066/Goro_Taniguchi">Taniguchi, Goro</a> (Story), <a href="http://myanimelist.net/people/3067/Ichiro_Okouchi">Okouchi, Ichiro</a> (Story), <a href="http://myanimelist.net/people/3081/Majiko!">Majiko!</a> (Art)</div><div class="spaceit"><span class="dark_text">Serialization:</span>
+		<a href="http://myanimelist.net/manga.php?mid=14">Asuka (Monthly)</a></div><br />
+		<h2>Statistics</h2><div><span class="dark_text">Score:</span> 7.74<sup><small>1</small></sup> <small>(scored by 3180 users)</small></div>
+		<div class="spaceit"><span class="dark_text">Ranked:</span> #2109<sup><small>2</small></sup></div>
+		<div><span class="dark_text">Popularity:</span> #293</div>
+		
+		<div class="spaceit"><span class="dark_text">Members:</span> 6,923</div>
+		<div><span class="dark_text">Favorites:</span> 367</div><div style="margin-top: 2px;"><small><sup><small>1</small></sup>  indicates a weighted score</small></div>
+		<div><sup><small>2</small></sup><small> based on the <a href="http://myanimelist.net/topmanga.php">top manga</a> page.</small></div>
+	<br />
+	<a name="addtolistanchor"></a>
+	<h2>My Info</h2><div><a href="javascript:void(0);" id="addclicker" onclick="myinfo_toggleAdd();">Add to My List</a></div>
+		<div id="addtolist" style="display: none;">
+		<input type="hidden" id="myinfo_manga_id" value="1528">
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		
+		<tr>
+		<td class="spaceit">Status:</td>
+		<td class="spaceit"><select id="myinfo_status" name="myinfo_status" onchange="checkComp(this);" class="inputtext"><option value="1" >Reading</option><option value="2" >Completed</option><option value="3" >On-Hold</option><option value="4" >Dropped</option><option value="6" >Plan to Read</option></select></td>
+		</tr>
+		<tr>
+		<td class="spaceit">Chap. Read:</td>
+		<td class="spaceit"><input type="text" id="myinfo_chapters" size="3" maxlength="4" class="inputtext" value=""> / <span id="totalChaps">38</span></td>
+		</tr>
+		<tr>
+		<td class="spaceit">Vol. Read:</td>
+		<td class="spaceit"><input type="text" id="myinfo_volumes" size="3" maxlength="4" class="inputtext" value=""> / <span id="totalVols">8</span></td>
+		</tr>
+		<tr>
+		<td class="spaceit">Your Score:</td>
+		<td class="spaceit"><select id="myinfo_score" name="myinfo_score" class="inputtext"><option value="0">Select</option><option value="10" >(10) Masterpiece</option><option value="9" >(9) Great</option><option value="8" >(8) Very Good</option><option value="7" >(7) Good</option><option value="6" >(6) Fine</option><option value="5" >(5) Average</option><option value="4" >(4) Bad</option><option value="3" >(3) Very Bad</option><option value="2" >(2) Horrible</option><option value="1" >(1) Appalling</option></select></td>
+		</tr>
+		
+		<tr>
+		  <td>&nbsp;</td>
+		  <td><input type="button" name="myinfo_submit" value="Add" onclick="myinfo_addtolist(1528);" class="inputButton"> <span id="addtolistresult"><a href="http://myanimelist.net/panel.php?go=addmanga&selected_manga_id=1528">Add Detailed Info</a></span></td>
+		</tr>
+		</table>
+		</div>
+		<div id="myinfoDisplay" style="padding-left: 82px; margin-top: 3px;"></div>
+		<br>
+	  <h2>Popular Tags</h2>
+	  <span style="font-size: 11px;"><a href="http://myanimelist.net/manga.php?tag=action" style="font-size: 24px" title="41 people tagged with action">action</a> <a href="http://myanimelist.net/manga.php?tag=mecha" style="font-size: 22px" title="40 people tagged with mecha">mecha</a> <a href="http://myanimelist.net/manga.php?tag=school" style="font-size: 12px" title="33 people tagged with school">school</a> <a href="http://myanimelist.net/manga.php?tag=supernatural" style="font-size: 11px" title="32 people tagged with supernatural">supernatural</a> </span></td><td valign="top" style="padding: 0;">
+	<a name="lower"></a>
+	<div id="horiznav_nav" style="margin: 5px 0 10px 0;">
+			<ul style="margin-right: 0; padding-right: 0;">
+			<li><a href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch" class="horiznav_active">Details</a></li>
+			<li><a  href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/reviews">Reviews</a></li>
+			<li><a  href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/userrecs">Recommendations</a>
+			<li><a  href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/stats">Stats</a></li>
+			<li><a  href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/characters">Characters</a></li>
+			<li><a  href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/news">News</a></li>
+			<li><a  href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/forum">Forum</a></li>
+			<li><a  href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/pics">Pictures</a></li>
+			</ul>
+	</div>
+	<div style="padding: 0 7px;"><table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+	<td valign="top"><h2>Synopsis</h2>The Empire of Brittania has invaded Japan using giant robot weapons called Knightmare Frames. Japan is now referred to as Area 11, and its people the 11s. A Brittanian who was living in Japan at the time, Lelouch, vowed to his Japanese friend Suzaku that he'd destroy Brittania. Years later, Lelouch is in high school, but regularly skips out of school to go play chess and gamble on himself.<br />
+<br />
+One day, he stumbles on terrorists 11s who've stolen a military secret and is caught by a member of the Brittanian task force sent after them, who is Suzaku. As the rest of the squad arrives, Suzaku is shot for disobeying orders, while the military secret, a young girl, gives Lelouch the power to make anyone obey any order. He takes command of the terrorists and leads them to crush the approaching Brittanian force. However, Suzaku is secretly made the pilot of Brittania's brand new test model Knightmare, Lancelot. Lelouch becomes the masked king Zero to lead the rebellion to defeat Brittania.<br />
+<br />
+(Source: MU)</td>
+	</tr>
+	<tr>
+	  <td><br><h2>Related Manga</h2>Alternative setting: <a href="http://myanimelist.net/manga/10167/Code_Geass:_Tales_of_an_Alternate_Shogunate">Code Geass: Tales of an Alternate Shogunate</a>, <a href="http://myanimelist.net/manga/25854/Barcode_Geass:_Hanbai_no_Lelouch">Barcode Geass: Hanbai no Lelouch</a><br>Spin-off: <a href="http://myanimelist.net/manga/11968/Code_Geass:_Hangyaku_no_Lelouch_-_Queen">Code Geass: Hangyaku no Lelouch - Queen</a>, <a href="http://myanimelist.net/manga/12042/Code_Geass:_Lelouch_of_the_Rebellion_-_Knight">Code Geass: Lelouch of the Rebellion - Knight</a>, <a href="http://myanimelist.net/manga/10822/Chibi_Geass_~4_Koma_no_Lelouch~">Chibi Geass ~4 Koma no Lelouch~</a><br>Alternative version: <a href="http://myanimelist.net/manga/1547/Code_Geass:_Nightmare_of_Nunnally">Code Geass: Nightmare of Nunnally</a>, <a href="http://myanimelist.net/manga/1530/Code_Geass:_Hankou_no_Suzaku">Code Geass: Hankou no Suzaku</a>, <a href="http://myanimelist.net/manga/11496/Code_Geass_-_Hangyaku_no_Lelouch_Novels">Code Geass - Hangyaku no Lelouch Novels</a><br>Prequel: <a href="http://myanimelist.net/manga/17311/Code_Geass:_Shikkoku_no_Renya">Code Geass: Shikkoku no Renya</a><br>Adaptation: <a href="http://myanimelist.net/anime/1575/Code_Geass:_Hangyaku_no_Lelouch">Code Geass: Hangyaku no Lelouch</a>, <a href="http://myanimelist.net/anime/2904/Code_Geass:_Hangyaku_no_Lelouch_R2">Code Geass: Hangyaku no Lelouch R2</a><br>
+		<br />
+		<h2><div style="float: right;"><a href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/characters" style="font-weight: normal;">More characters</a></div>Characters</h2><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+			<td valign="top" width="27" class="borderClass bgColor2" align="center">
+			<div class="picSurround"><a href="http://myanimelist.net/character/1111/C.C." style="font-weight: normal;"><img src="http://cdn.myanimelist.net/images/characters/13/33815t.jpg" alt=" C.C." vspace="4" hspace="8" border="0"></a></div>
+			</div>
+			</td>
+			<td valign="top" class="borderClass bgColor2">
+			<a href="http://myanimelist.net/character/1111/C.C.">C.C.</a>
+			<div class="spaceit_pad"><small>Main</small></div>
+			</div>
+			</td>
+			</tr>
+			</table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+			<td valign="top" width="27" class="borderClass bgColor1" align="center">
+			<div class="picSurround"><a href="http://myanimelist.net/character/559/Suzaku_Kururugi" style="font-weight: normal;"><img src="http://cdn.myanimelist.net/images/characters/2/31564t.jpg" alt=" Suzaku" vspace="4" hspace="8" border="0"></a></div>
+			</div>
+			</td>
+			<td valign="top" class="borderClass bgColor1">
+			<a href="http://myanimelist.net/character/559/Suzaku_Kururugi">Kururugi, Suzaku</a>
+			<div class="spaceit_pad"><small>Main</small></div>
+			</div>
+			</td>
+			</tr>
+			</table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+			<td valign="top" width="27" class="borderClass bgColor2" align="center">
+			<div class="picSurround"><a href="http://myanimelist.net/character/417/Lelouch_Lamperouge" style="font-weight: normal;"><img src="http://cdn.myanimelist.net/images/characters/8/30505t.jpg" alt=" Lelouch" vspace="4" hspace="8" border="0"></a></div>
+			</div>
+			</td>
+			<td valign="top" class="borderClass bgColor2">
+			<a href="http://myanimelist.net/character/417/Lelouch_Lamperouge">Lamperouge, Lelouch</a>
+			<div class="spaceit_pad"><small>Main</small></div>
+			</div>
+			</td>
+			</tr>
+			</table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+			<td valign="top" width="27" class="borderClass bgColor1" align="center">
+			<div class="picSurround"><a href="http://myanimelist.net/character/1298/Mao" style="font-weight: normal;"><img src="http://cdn.myanimelist.net/images/characters/5/176097t.jpg" alt=" Mao" vspace="4" hspace="8" border="0"></a></div>
+			</div>
+			</td>
+			<td valign="top" class="borderClass bgColor1">
+			<a href="http://myanimelist.net/character/1298/Mao">Mao</a>
+			<div class="spaceit_pad"><small>Supporting</small></div>
+			</div>
+			</td>
+			</tr>
+			</table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+			<td valign="top" width="27" class="borderClass bgColor2" align="center">
+			<div class="picSurround"><a href="http://myanimelist.net/character/51169/Kallen&#039;s_Stepmother" style="font-weight: normal;"><img src="http://cdn.myanimelist.net/images/characters/5/140811t.jpg" alt=" Kallen&#039;s Stepmother" vspace="4" hspace="8" border="0"></a></div>
+			</div>
+			</td>
+			<td valign="top" class="borderClass bgColor2">
+			<a href="http://myanimelist.net/character/51169/Kallen&#039;s_Stepmother">Kallen&#039;s Stepmother</a>
+			<div class="spaceit_pad"><small>Supporting</small></div>
+			</div>
+			</td>
+			</tr>
+			</table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+			<td valign="top" width="27" class="borderClass bgColor1" align="center">
+			<div class="picSurround"><a href="http://myanimelist.net/character/1118/Kusakabe" style="font-weight: normal;"><img src="http://cdn.myanimelist.net/images/characters/2/148381t.jpg" alt=" Kusakabe" vspace="4" hspace="8" border="0"></a></div>
+			</div>
+			</td>
+			<td valign="top" class="borderClass bgColor1">
+			<a href="http://myanimelist.net/character/1118/Kusakabe">Kusakabe</a>
+			<div class="spaceit_pad"><small>Supporting</small></div>
+			</div>
+			</td>
+			</tr>
+			</table><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
+			<td valign="top" width="27" class="borderClass bgColor2" align="center">
+			<div class="picSurround"><a href="http://myanimelist.net/character/49161/Gao_Hai" style="font-weight: normal;"><img src="http://cdn.myanimelist.net/images/characters/8/144231t.jpg" alt=" Gao Hai" vspace="4" hspace="8" border="0"></a></div>
+			</div>
+			</td>
+			<td valign="top" class="borderClass bgColor2">
+			<a href="http://myanimelist.net/character/49161/Gao_Hai">Gao Hai</a>
+			<div class="spaceit_pad"><small>Supporting</small></div>
+			</div>
+			</td>
+			</tr>
+			</table>
+		<br />
+		<div style='float:left;'>
+				<div class="ad300">
+				<div class="ad_300">
+						<script type="text/javascript">
+						  if (typeof(gnm_ord)=='undefined') gnm_ord=Math.random()*10000000000000000;
+						  if (typeof(gnm_tile) == 'undefined') gnm_tile=1;
+						  document.write('<scr'+'ipt src="http://n4403ad.doubleclick.net/adj/gn.cr.myanimelist.net/ros;sect=ros;sz=300x250;dga=;dgg=;pos=btf;tile='+(gnm_tile++)+';ord=' + gnm_ord + ';?" type="text/javascript"></scr' + 'ipt>');
+						</script>
+						</div>
+				</div>
+				</div><div style='float:right;'><script type='text/javascript'>
+var _CI = _CI || {};
+(function() {
+var script = document.createElement('script');
+ref = document.getElementsByTagName('script')[0];
+_CI.counter = (_CI.counter) ? _CI.counter + 1 : 1;
+document.write('<div id="_CI_widget_');
+document.write(_CI.counter+'"></div>');
+script.type = 'text/javascript';
+script.src = 'http://widget.crowdignite.com/widgets/2054?_ci_wid=_CI_widget_'+_CI.counter;
+script.async = true;
+ref.parentNode.insertBefore(script, ref);
+})(); </script></div><br style='clear:both;'><br /><h2><span class="floatRightHeader"><a href="http://myanimelist.net/myreviews.php?mid=1528&go=write">Write a review</a> | <a href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/reviews">More reviews</a></span>Reviews</h2><div style="margin: 10px 0px;">There have been no reviews submitted for this manga yet. Be the first and <a href="http://myanimelist.net/myreviews.php?mid=1528&go=write">write one</a>.</div>
+		<br />
+		<h2>
+		<div style="float: right; font-weight: normal;"><a href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/userrecs">More recommendations</a></div>
+		User Recommendations</h2>
+		
+			<div class="borderClass">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td width="60" valign="top">
+				<div class="picSurround"><a href="http://myanimelist.net/manga/21/Death_Note" class="hoverinfo_trigger" id="#raArea121" rel="#raInfo121"><img src="http://cdn.myanimelist.net/images/manga/2/54453t.jpg" border="0"></a></div>
+				</td>
+				<td valign="top">
+				
+	<div id="raArea121">
+	<div id="raInfo121" rel="m21" class="hoverinfo">
+	</div>
+	</div>
+	
+				<div style="margin-bottom: 2px;"><a href="http://myanimelist.net/manga/21/Death_Note"><strong>Death Note</strong></a> <a href="http://myanimelist.net/panel.php?go=addmanga&selected_manga_id=21&hideLayout" title="Quick add manga to my list" class="Lightbox_AddEdit button_add">add</a></div>
+				
+					<div class="borderClass bgColor1" style="padding: 3px; border-width: 1px 0 0 0; margin: 4px 0;">
+					<div class="spaceit_pad">It is similar because in both mangas, there is someone that is trying to bring justice to the world in such ways that you would have never thought of. They both have main characters who go to the extremes to get what they think is better for the world. </div>
+					<div class="spaceit_pad"><span style="float: right;"><a href="http://myanimelist.net/dbchanges.php?go=reportmangarecommendation&id=3405" class="lightLink"><small>report</small></a></span>Recommended by <a href="http://myanimelist.net/profile/xxDANIELAxx">xxDANIELAxx</a> - <span><a href="javascript:void(0);" onclick="addRemoveFavorite(this,134994,2); return false;">Add to favorites</a></span></div>
+					</div>
+						<div class="spaceit"><a href="javascript:void(0);" onclick="getRecommendation(1528,0);">Read recommendations by <strong>2</strong> more users</a></div>
+						<div id="simaid0" style="display: none;">
+					<div class="borderClass bgColor2" style="padding: 3px; border-width: 1px 0 0 0; margin: 4px 0;">
+					<div class="spaceit_pad">They are both about a male protagonist who uses their minds to create a new world with a special powerthey both inherite from a non-human being. Both challenges the mind, but completely different scenes and endings. Code Geass is much longer than Death Note. </div>
+					<div class="spaceit_pad"><span style="float: right;"><a href="http://myanimelist.net/dbchanges.php?go=reportmangarecommendation&id=6014" class="lightLink"><small>report</small></a></span>Recommended by <a href="http://myanimelist.net/profile/7izanami2">7izanami2</a> - <span><a href="javascript:void(0);" onclick="addRemoveFavorite(this,283909,2); return false;">Add to favorites</a></span></div>
+					</div>
+					<div class="borderClass bgColor1" style="padding: 3px; border-width: 1px 0 0 0; margin: 4px 0;">
+					<div class="spaceit_pad">Both Code Geass and Death note are about a character which decided after obdaining a power to change the world, code geass is more about a story of revenge , the main character trying to destory britannia, even thought he is a britanian himself and changing and currect system. In Death note after the character obdaining his power, he is trying to change the currect world, he wants to make it better, a peacefull world without crimicals or killers, both are like that , strategy manga :) </div>
+					<div class="spaceit_pad"><span style="float: right;"><a href="http://myanimelist.net/dbchanges.php?go=reportmangarecommendation&id=9678" class="lightLink"><small>report</small></a></span>Recommended by <a href="http://myanimelist.net/profile/ghostprince">ghostprince</a> - <span><a href="javascript:void(0);" onclick="addRemoveFavorite(this,302924,2); return false;">Add to favorites</a></span></div>
+					</div></div>
+				</td>
+			</tr>
+			</table>
+			</div>
+			
+			<div class="borderClass">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td width="60" valign="top">
+				<div class="picSurround"><a href="http://myanimelist.net/manga/976/Vampire_Juuji_Kai" class="hoverinfo_trigger" id="#raArea1976" rel="#raInfo1976"><img src="http://cdn.myanimelist.net/images/manga/1/67183t.jpg" border="0"></a></div>
+				</td>
+				<td valign="top">
+				
+	<div id="raArea1976">
+	<div id="raInfo1976" rel="m976" class="hoverinfo">
+	</div>
+	</div>
+	
+				<div style="margin-bottom: 2px;"><a href="http://myanimelist.net/manga/976/Vampire_Juuji_Kai"><strong>Vampire Juuji Kai</strong></a> <a href="http://myanimelist.net/panel.php?go=addmanga&selected_manga_id=976&hideLayout" title="Quick add manga to my list" class="Lightbox_AddEdit button_add">add</a></div>
+				
+					<div class="borderClass bgColor1" style="padding: 3px; border-width: 1px 0 0 0; margin: 4px 0;">
+					<div class="spaceit_pad">These two manga are so alike to the point that the story is absolutely amazing.<br />
+<br />
+Record of Fallen Vampire is about a vampire king name Strauss who had abandon and destroy his own kingdom. Code Geass is about a disowned prince name Lelouch vi Britannia who has a deep hatred for his birth empire.<br />
+<br />
+In both manga, it talks about how both main character have to use their mind, strength, and sheer will power to obtain their goal. They both have a lonely role where they are always in the position of losing someone they loved. The role that is known as "The King". Both the main character, Lelouch and Strauss are always thinking, finding, and looking for the best possible outcome that is best for the people around them.<br />
+<br />
+But what I makes these manga so similar to each other are the ending to the two, I really can't explain it because it might be consider as a spoiler. But if you know the ending to these two, they are very alike. So all in all. If you like Code Geass, you would definitely like Record of Fallen Vampire. </div>
+					<div class="spaceit_pad"><span style="float: right;"><a href="http://myanimelist.net/dbchanges.php?go=reportmangarecommendation&id=6551" class="lightLink"><small>report</small></a></span>Recommended by <a href="http://myanimelist.net/profile/asianxweirdo">asianxweirdo</a> - <span><a href="javascript:void(0);" onclick="addRemoveFavorite(this,231437,2); return false;">Add to favorites</a></span></div>
+					</div>
+						<div class="spaceit"><a href="javascript:void(0);" onclick="getRecommendation(1528,1);">Read recommendations by <strong>1</strong> more user</a></div>
+						<div id="simaid1" style="display: none;">
+					<div class="borderClass bgColor2" style="padding: 3px; border-width: 1px 0 0 0; margin: 4px 0;">
+					<div class="spaceit_pad">Both main characters are smart like had a plan all sort out in the beginning but revealed in the end. Both main characters are being hunted down. They both have a similar ending. </div>
+					<div class="spaceit_pad"><span style="float: right;"><a href="http://myanimelist.net/dbchanges.php?go=reportmangarecommendation&id=8253" class="lightLink"><small>report</small></a></span>Recommended by <a href="http://myanimelist.net/profile/KimchiiPanda">KimchiiPanda</a> - <span><a href="javascript:void(0);" onclick="addRemoveFavorite(this,326815,2); return false;">Add to favorites</a></span></div>
+					</div></div>
+				</td>
+			</tr>
+			</table>
+			</div>
+			
+		<div class="spaceit"><a href="http://myanimelist.net/myrecommendations.php?go=make&mid=1528">Make a recommendation for Code Geass: Hangyaku no Lelouch</a></div>
+		<br />
+		<h2><div style="float: right; font-weight: normal;"><a href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/news">See More</a></div>Recent News</h2>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" id="forumTopics">
+		<tr>
+		  <td colspan="5" style="padding: 3px;" style="border-width: 0px 1px 1px 1px;">No posts for this board were found</td>
+		</tr></table><br><h2><div style="float: right; font-weight: normal;"><a href="http://myanimelist.net/forum/?mangaid=1528">See All</a> | <a href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/forum">See More</a></div>Recent Forum Discussion</h2>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" id="forumTopics"><tr id="topicRow1">
+    	         <td class="forum_boardrow2" style="border-width: 0px 1px 1px 1px;" width="25" align="center" id="topicrow1"><img src="http://cdn.myanimelist.net/images/watch_n.gif" title="Topic is not being watched"></td>
+                 <td class="forum_boardrow1" style="border-width: 0px 1px 1px 0px;">Poll:  <a href="http://myanimelist.net/forum/?topicid=135200">Code Geass: Lelouch of the Rebellion Chapter 17 Discussion</a> <small></small><br>
+		         <span class="forum_postusername"><a href="http://myanimelist.net/profile/kage-bunshin">kage-bunshin</a></span></td>
+			  <td align="center" width="75" class="forum_boardrow2" style="border-width: 0px 1px 1px 0px;">7 replies</td>
+				<td align="right" width="130" class="forum_boardrow1" style="border-width: 0px 1px 1px 0px;" nowrap>by <a href="http://myanimelist.net/profile/Rayanyan">Rayanyan</a> <a href="http://myanimelist.net/forum/?topicid=135200&goto=lastpost" title="Go to the Last Post">&raquo;&raquo;</a><br>
+11-01-11, 6:21 AM</td>
+			</tr>
+			<tr id="topicRow2">
+    	         <td class="forum_boardrow2" style="border-width: 0px 1px 1px 1px;" width="25" align="center" id="topicrow2"><img src="http://cdn.myanimelist.net/images/watch_n.gif" title="Topic is not being watched"></td>
+                 <td class="forum_boardrow1" style="border-width: 0px 1px 1px 0px;">Poll:  <a href="http://myanimelist.net/forum/?topicid=313887">Code Geass: Lelouch of the Rebellion Chapter 21 Discussion</a> <small></small><br>
+		         <span class="forum_postusername"><a href="http://myanimelist.net/profile/Ferekk">Ferekk</a></span></td>
+			  <td align="center" width="75" class="forum_boardrow2" style="border-width: 0px 1px 1px 0px;">0 replies</td>
+				<td align="right" width="130" class="forum_boardrow1" style="border-width: 0px 1px 1px 0px;" nowrap>by <a href="http://myanimelist.net/profile/Ferekk">Ferekk</a> <a href="http://myanimelist.net/forum/?topicid=313887&goto=lastpost" title="Go to the Last Post">&raquo;&raquo;</a><br>
+08-07-11, 8:50 AM</td>
+			</tr>
+			</table><br><h2>Related Clubs</h2><a href="http://myanimelist.net/clubs.php?cid=12623">                       CODE GEASS ELITE!!!! WE ROCK!!!!</a>, <a href="http://myanimelist.net/clubs.php?cid=17858">&hearts; Lelouch Vi Britannia fans &hearts; </a>, <a href="http://myanimelist.net/clubs.php?cid=22771">- Official Lelouch Vi Britania FanClub -</a>, <a href="http://myanimelist.net/clubs.php?cid=16726">- Sad Moments &amp; Scenes - </a>, <a href="http://myanimelist.net/clubs.php?cid=13951">-Code Geass FanClub-</a>, <a href="http://myanimelist.net/clubs.php?cid=20999">-Orange &amp; Yellow haired-</a>, <a href="http://myanimelist.net/clubs.php?cid=22372">-ShirleyxLulu Lovers-</a>, <a href="http://myanimelist.net/clubs.php?cid=20961">-Trust and Betrayal-</a>, <a href="http://myanimelist.net/clubs.php?cid=20828">Absolute Claim Temple</a>, <a href="http://myanimelist.net/clubs.php?cid=9502">All Hail Britannia!!!</a>, <a href="http://myanimelist.net/clubs.php?cid=6241">ALL HAIL CODE GEASS!!!&gt;.&lt;</a>, <a href="http://myanimelist.net/clubs.php?cid=18602">Anime Lovers Kingdom</a>, <a href="http://myanimelist.net/clubs.php?cid=3486">Anime orphans.</a>, <a href="http://myanimelist.net/clubs.php?cid=11214">Anime Republic</a>, <a href="http://myanimelist.net/clubs.php?cid=13248">Anti C.C. club</a>, <a href="http://myanimelist.net/clubs.php?cid=6016">Anti Code Geass</a>, <a href="http://myanimelist.net/clubs.php?cid=13641">Anti-Lelouch Club.</a>, <a href="http://myanimelist.net/clubs.php?cid=13326">Anya Alstreim Fans </a>, <a href="http://myanimelist.net/clubs.php?cid=13883">Ashford Academy roleplay</a>, <a href="http://myanimelist.net/clubs.php?cid=11707">A~World Society</a>, <a href="http://myanimelist.net/clubs.php?cid=8558">☆ Der erste offizielle AnimeManga Club☆</a>, <a href="http://myanimelist.net/clubs.php?cid=10338">☆ LELOUCH &amp; EUPHIE FANCLUB☆</a>, <a href="http://myanimelist.net/clubs.php?cid=7960">Babes in Fightland</a>, <a href="http://myanimelist.net/clubs.php?cid=6094">Bad Boys</a>, <a href="http://myanimelist.net/clubs.php?cid=12576">Blader's Lair</a>, <a href="http://myanimelist.net/clubs.php?cid=15669">Bows!</a>, <a href="http://myanimelist.net/clubs.php?cid=12631">C.C Love~~</a>, <a href="http://myanimelist.net/clubs.php?cid=1091">C.C. FanClub~</a>, <a href="http://myanimelist.net/clubs.php?cid=13448">C.C. Queen of Geass</a>, <a href="http://myanimelist.net/clubs.php?cid=6272">Candy Island ^/^</a>, <a href="http://myanimelist.net/clubs.php?cid=9204">catch a bishonen!~/punch a character club</a>, <a href="http://myanimelist.net/clubs.php?cid=21165">Cha's Awsome Friends</a>, <a href="http://myanimelist.net/clubs.php?cid=17803">Cheese-kun FC~!</a>, <a href="http://myanimelist.net/clubs.php?cid=8013">Claim a Brunette </a>, <a href="http://myanimelist.net/clubs.php?cid=8449">claim a code geass character</a>, <a href="http://myanimelist.net/clubs.php?cid=6394">Claim a Smart Character Club</a>, <a href="http://myanimelist.net/clubs.php?cid=5542">Club for people addicted to ~Code Geass~</a>, <a href="http://myanimelist.net/clubs.php?cid=10">Code Geass</a>, <a href="http://myanimelist.net/clubs.php?cid=3698">Code Geass - Lelouch of the Rebellion</a>, <a href="http://myanimelist.net/clubs.php?cid=16261">Code Geass : Hangyaku no Lelouch Fan Club</a>, <a href="http://myanimelist.net/clubs.php?cid=15238">Code Geass Club</a>, <a href="http://myanimelist.net/clubs.php?cid=18031">code geass fan club</a>, <a href="http://myanimelist.net/clubs.php?cid=15219">code geass fan club</a>, <a href="http://myanimelist.net/clubs.php?cid=16948">code geass fc</a>, <a href="http://myanimelist.net/clubs.php?cid=9984">Code Geass LOVERS</a>, <a href="http://myanimelist.net/clubs.php?cid=25232">Code Geass Online FC</a>, <a href="http://myanimelist.net/clubs.php?cid=15410">Code Geass R3 Petition</a>, <a href="http://myanimelist.net/clubs.php?cid=16406">Code Geass RP</a>, <a href="http://myanimelist.net/clubs.php?cid=11296">Code Geass Rp</a>, <a href="http://myanimelist.net/clubs.php?cid=9697">Code Geass RP</a>, <a href="http://myanimelist.net/clubs.php?cid=12481">code geass ultimate addicted fan</a>, <a href="http://myanimelist.net/clubs.php?cid=7457">Code Geass vs. Death Note</a>, <a href="http://myanimelist.net/clubs.php?cid=20197">CODE GEASS: Lelouch of the Rebellion    FANS   CLUB</a>, <a href="http://myanimelist.net/clubs.php?cid=23349">Code Geass: Original club for fans only</a>, <a href="http://myanimelist.net/clubs.php?cid=8302">Code Geass; - World of C - </a>, <a href="http://myanimelist.net/clubs.php?cid=26768">Code_Geass Fandom</a>, <a href="http://myanimelist.net/clubs.php?cid=22497">Coge Geass~R3</a>, <a href="http://myanimelist.net/clubs.php?cid=5286">Cool Characters Club (CCC)</a>, <a href="http://myanimelist.net/clubs.php?cid=24266">Counter-Anti Code Geass</a>, <a href="http://myanimelist.net/clubs.php?cid=17447">Dark Lelouch the Risen</a>, <a href="http://myanimelist.net/clubs.php?cid=19112">Death Note, Sailor Moon, Code Geass, Naruto, and Inuyasha fans!</a>, <a href="http://myanimelist.net/clubs.php?cid=9422">Declare Your Position In Code Geass</a>, <a href="http://myanimelist.net/clubs.php?cid=34790">Dystopic Anime</a>, <a href="http://myanimelist.net/clubs.php?cid=20821">Eleventy Billionth Club</a>, <a href="http://myanimelist.net/clubs.php?cid=18488">Em's Room</a>, <a href="http://myanimelist.net/clubs.php?cid=6640">Euphemia Love</a>, <a href="http://myanimelist.net/clubs.php?cid=6935">Funny Anime&amp;Manga Vids&amp;Comics</a>, <a href="http://myanimelist.net/clubs.php?cid=7349">Geass Fan</a>, <a href="http://myanimelist.net/clubs.php?cid=7213">Gino Weinberg</a>, <a href="http://myanimelist.net/clubs.php?cid=7214">Gino X Kallen Fans</a>, <a href="http://myanimelist.net/clubs.php?cid=14256">Green Haired Anime Characters</a>, <a href="http://myanimelist.net/clubs.php?cid=19378">Grip of Insanity</a>, <a href="http://myanimelist.net/clubs.php?cid=18261">Guren Mk. II  &amp; Guren S.E.I.T.E.N fanclub</a>, <a href="http://myanimelist.net/clubs.php?cid=7147">Help Raise Cancer Awareness (HRCA)</a>, <a href="http://myanimelist.net/clubs.php?cid=30801">Holy Britannian Empire</a>, <a href="http://myanimelist.net/clubs.php?cid=2526">House of C.C.</a>, <a href="http://myanimelist.net/clubs.php?cid=32215">I &hearts; C.C. </a>, <a href="http://myanimelist.net/clubs.php?cid=4786">I hate Suzaku Club</a>, <a href="http://myanimelist.net/clubs.php?cid=9670">Infinity and the White Knights</a>, <a href="http://myanimelist.net/clubs.php?cid=15190">Intelligent Perverts</a>, <a href="http://myanimelist.net/clubs.php?cid=11982">Justice or InJustice?!</a>, <a href="http://myanimelist.net/clubs.php?cid=13476">Kallen and Gino</a>, <a href="http://myanimelist.net/clubs.php?cid=11527">Kallen and Lelouch</a>, <a href="http://myanimelist.net/clubs.php?cid=5753">kallen is awesomeeeeeeeee club</a>, <a href="http://myanimelist.net/clubs.php?cid=13566">Kallen Love ~</a>, <a href="http://myanimelist.net/clubs.php?cid=3017">Kallen Stadtfeld/Kozuki Fans</a>, <a href="http://myanimelist.net/clubs.php?cid=7062">Killin'</a>, <a href="http://myanimelist.net/clubs.php?cid=14241">Klub Polskich Fan&oacute;w Code Geass</a>, <a href="http://myanimelist.net/clubs.php?cid=17761">knight of justice</a>, <a href="http://myanimelist.net/clubs.php?cid=6487">Knightmare Frames </a>, <a href="http://myanimelist.net/clubs.php?cid=6311">Knights of Nunnally</a>, <a href="http://myanimelist.net/clubs.php?cid=14337">Kouhaku Scanlator</a>, <a href="http://myanimelist.net/clubs.php?cid=1327">Kururugi Suzaku Fanclub</a>, <a href="http://myanimelist.net/clubs.php?cid=12513">Legion of Geass</a>, <a href="http://myanimelist.net/clubs.php?cid=8903">Lelou-sama's shrine</a>, <a href="http://myanimelist.net/clubs.php?cid=12830">Lelouch And Light</a>, <a href="http://myanimelist.net/clubs.php?cid=14695">Lelouch Fan Club </a>, <a href="http://myanimelist.net/clubs.php?cid=22335">Lelouch Fangirls &hearts;</a>, <a href="http://myanimelist.net/clubs.php?cid=1237">Lelouch Lamperouge Fanclub</a>, <a href="http://myanimelist.net/clubs.php?cid=8794">Lelouch Lives</a>, <a href="http://myanimelist.net/clubs.php?cid=6836">Lelouch lives!  CCxLelouch Club</a>, <a href="http://myanimelist.net/clubs.php?cid=12744">Lelouch vi britannia club</a>, <a href="http://myanimelist.net/clubs.php?cid=6990">Lelouch VI Britannia Club (LelouchFanClub)</a>, <a href="http://myanimelist.net/clubs.php?cid=1451">Lelouch X C.C.</a>, <a href="http://myanimelist.net/clubs.php?cid=9221">LelouchxShirley Fan Club</a>, <a href="http://myanimelist.net/clubs.php?cid=10634">Lelouch`s Lover &hearts;</a>, <a href="http://myanimelist.net/clubs.php?cid=25175">Lineage of Britannia</a>, <a href="http://myanimelist.net/clubs.php?cid=17757">Long Hair Characters Fanclub!</a>, <a href="http://myanimelist.net/clubs.php?cid=19623">LQ of Lelouch x CC</a>, <a href="http://myanimelist.net/clubs.php?cid=2574">MAL Sexy Pageant</a>, <a href="http://myanimelist.net/clubs.php?cid=7367">MAL Theme Club</a>, <a href="http://myanimelist.net/clubs.php?cid=17095">Manga Experience</a>, <a href="http://myanimelist.net/clubs.php?cid=7238">Mao fanclub</a>, <a href="http://myanimelist.net/clubs.php?cid=31407">Marry a Character (M.A.C.)</a>, <a href="http://myanimelist.net/clubs.php?cid=20622">Mech Battle Royale RP</a>, <a href="http://myanimelist.net/clubs.php?cid=19386">Mecha HQ</a>, <a href="http://myanimelist.net/clubs.php?cid=18386">MidnightSky FC!</a>, <a href="http://myanimelist.net/clubs.php?cid=6445">Milly Ashford Fanclub</a>, <a href="http://myanimelist.net/clubs.php?cid=7640">motivational posters</a>, <a href="http://myanimelist.net/clubs.php?cid=12868">Neko-Mimi Lovers</a>, <a href="http://myanimelist.net/clubs.php?cid=24761">New South Wales Aussie Anime Club</a>, <a href="http://myanimelist.net/clubs.php?cid=5552">Nina Fans</a>, <a href="http://myanimelist.net/clubs.php?cid=12661">Nina hearts Tables</a>, <a href="http://myanimelist.net/clubs.php?cid=5416">Nina Must Die!</a>, <a href="http://myanimelist.net/clubs.php?cid=24046">Nina Should Die!</a>, <a href="http://myanimelist.net/clubs.php?cid=15506">Nunnally Fan Club</a>, <a href="http://myanimelist.net/clubs.php?cid=16328">Ojou-sama Fanclub</a>, <a href="http://myanimelist.net/clubs.php?cid=1916">OMEDETOU! Lloyd Asplund's Fans!</a>, <a href="http://myanimelist.net/clubs.php?cid=2379">Orange Range</a>, <a href="http://myanimelist.net/clubs.php?cid=17708">Order of the Black Knights</a>, <a href="http://myanimelist.net/clubs.php?cid=34658">Overrated or Underrated Animes and Mangas</a>, <a href="http://myanimelist.net/clubs.php?cid=7807">Penggemar Anime Di Indonesia</a>, <a href="http://myanimelist.net/clubs.php?cid=12969">PINK</a>, <a href="http://myanimelist.net/clubs.php?cid=14441">Ponytail/Pigtail Fan Club</a>, <a href="http://myanimelist.net/clubs.php?cid=20892">Purple and Blue Haired Characters</a>, <a href="http://myanimelist.net/clubs.php?cid=14457">Rivalz Fan club</a>, <a href="http://myanimelist.net/clubs.php?cid=8198">rolo-lulu: brotherly love.</a>, <a href="http://myanimelist.net/clubs.php?cid=20097">romance/love triangle anime</a>, <a href="http://myanimelist.net/clubs.php?cid=4038">Schneizel el Britannia FanClub!</a>, <a href="http://myanimelist.net/clubs.php?cid=6095">Schneizel el Britannia must die</a>, <a href="http://myanimelist.net/clubs.php?cid=15441">Sci-Fi club</a>, <a href="http://myanimelist.net/clubs.php?cid=5229">Shinozaki Sayoko Fanclub</a>, <a href="http://myanimelist.net/clubs.php?cid=25075">Shirley Must Die</a>, <a href="http://myanimelist.net/clubs.php?cid=1486">Silver, White, Gray-Haired Characters Fanclub!</a>, <a href="http://myanimelist.net/clubs.php?cid=17846">Skinny Boys FC</a>, <a href="http://myanimelist.net/clubs.php?cid=15698">Students in Anime and Manga</a>, <a href="http://myanimelist.net/clubs.php?cid=21237">Suzaku Fanclub</a>, <a href="http://myanimelist.net/clubs.php?cid=7879">SUZAKU HATERS</a>, <a href="http://myanimelist.net/clubs.php?cid=8184">SUZAKU KURURUGI</a>, <a href="http://myanimelist.net/clubs.php?cid=4849">Suzaku x Lelouch Forever</a>, <a href="http://myanimelist.net/clubs.php?cid=3638">Suzaku/Euphie</a>, <a href="http://myanimelist.net/clubs.php?cid=9503">The Angry Characters Club</a>, <a href="http://myanimelist.net/clubs.php?cid=11773">The Awesome Club</a>, <a href="http://myanimelist.net/clubs.php?cid=4188">the best damn anime/game club ever</a>, <a href="http://myanimelist.net/clubs.php?cid=6224">THE EMPEROR SUCKS CLUB</a>, <a href="http://myanimelist.net/clubs.php?cid=4427">The Emperor's Court Ladies Club</a>, <a href="http://myanimelist.net/clubs.php?cid=18755">The Geass Club</a>, <a href="http://myanimelist.net/clubs.php?cid=25964">The Lamperouge family</a>, <a href="http://myanimelist.net/clubs.php?cid=20164">The Masters &amp; Servants Realm</a>, <a href="http://myanimelist.net/clubs.php?cid=5107">The Orange-kun club!</a>, <a href="http://myanimelist.net/clubs.php?cid=34149">The Order of The Black Knights</a>, <a href="http://myanimelist.net/clubs.php?cid=12446">The Resistence against Cheese-Kun Club</a>, <a href="http://myanimelist.net/clubs.php?cid=25171">The Rulers of Britannia</a>, <a href="http://myanimelist.net/clubs.php?cid=14990">The Ultimate Absolute Ukes (U.A.U)</a>, <a href="http://myanimelist.net/clubs.php?cid=6681">The we hate Kallen club</a>, <a href="http://myanimelist.net/clubs.php?cid=25892">The We Love Nina Einstein FC</a>, <a href="http://myanimelist.net/clubs.php?cid=8358">The World of C</a>, <a href="http://myanimelist.net/clubs.php?cid=746">Unraveled Mysteries</a>, <a href="http://myanimelist.net/clubs.php?cid=11257">Upcoming U.S. Releases</a>, <a href="http://myanimelist.net/clubs.php?cid=7108">Vampires, Clones, Magiciancs, Demon, Angels Gallors</a>, <a href="http://myanimelist.net/clubs.php?cid=7120">Villetta Fanclub</a>, <a href="http://myanimelist.net/clubs.php?cid=5199">We Hate Nina!</a>, <a href="http://myanimelist.net/clubs.php?cid=3915">We hate Shirley. </a>, <a href="http://myanimelist.net/clubs.php?cid=5042">We love Shirley.</a>, <a href="http://myanimelist.net/clubs.php?cid=9333">We love them with Brown hair and green eyes !</a>, <a href="http://myanimelist.net/clubs.php?cid=12362">Witch and Warlock</a>, <a href="http://myanimelist.net/clubs.php?cid=2414">WORLD DOMINATION!!! Bwhahahaa &gt;:3</a>, <a href="http://myanimelist.net/clubs.php?cid=9888">Xingke x Tianzi Fan Club</a>, <a href="http://myanimelist.net/clubs.php?cid=10357">yellow eyes fanclub</a>, <a href="http://myanimelist.net/clubs.php?cid=9394">Zero club</a>, <a href="http://myanimelist.net/clubs.php?cid=7331">Zero Requiem</a>, <a href="http://myanimelist.net/clubs.php?cid=27901">Zero Requiem Bringer's</a>, <a href="http://myanimelist.net/clubs.php?cid=4573">Zero's Bodyguards</a>, <a href="http://myanimelist.net/clubs.php?cid=12732">Zero's Requiem </a>, <a href="http://myanimelist.net/clubs.php?cid=13223">[Anime Vibe] TEMPORARILY RE-OPEN</a>, <a href="http://myanimelist.net/clubs.php?cid=15891">{*Yuruppy's SSS*}</a>, <a href="http://myanimelist.net/clubs.php?cid=9992">~ The Divine Black Knights ~</a>, <a href="http://myanimelist.net/clubs.php?cid=19609">~ WATER BOTTLE CLUB ~</a>, <a href="http://myanimelist.net/clubs.php?cid=9854">~*Chibi FanClub*~</a>, <a href="http://myanimelist.net/clubs.php?cid=3836">~*Superior Shrine*~</a>, <a href="http://myanimelist.net/clubs.php?cid=22131">~Code Geass F.C~</a>, <a href="http://myanimelist.net/clubs.php?cid=20714">~Code Geass- Cutest Girls~(CG2)</a>, <a href="http://myanimelist.net/clubs.php?cid=20713">~Code Geass-Coolest Boys~(CGCB)</a>, <a href="http://myanimelist.net/clubs.php?cid=16512">~HoT Anime BaBEz FAn CLuB~</a>, <a href="http://myanimelist.net/clubs.php?cid=10621">~~Lelouch &amp; C.C The Most Perfect Couple On Earth~~</a><br><br><h2><span style="float: right; font-weight: normal;"><a href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/lastusers">More Users</a> | <a href="http://myanimelist.net/manga/1528/Code_Geass:_Hangyaku_no_Lelouch/stats&m=friends#members">My Friends</a></span>Recent Updates by Users</h2><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td width="20%" align="center" class="borderClass"><div style="margin-bottom: 3px;"><a href="http://myanimelist.net/profile/Aztro">Aztro</a></div>
+			<div class="picSurround"><a href="http://myanimelist.net/profile/Aztro"><img src="http://cdn.myanimelist.net/images/questionmark_50.gif" border="0"></a></div>
+			<div class="lightLink" style="margin-top: 3px;"><small>11 hours ago</small></div></td><td width="20%" align="center" class="borderClass"><div style="margin-bottom: 3px;"><a href="http://myanimelist.net/profile/hingridiente">hingridiente</a></div>
+			<div class="picSurround"><a href="http://myanimelist.net/profile/hingridiente"><img src="http://cdn.myanimelist.net/images/userimages/thumbs/1319799_thumb.jpg" border="0"></a></div>
+			<div class="lightLink" style="margin-top: 3px;"><small>Yesterday, 5:15 PM</small></div></td><td width="20%" align="center" class="borderClass"><div style="margin-bottom: 3px;"><a href="http://myanimelist.net/profile/Tiecie">Tiecie</a></div>
+			<div class="picSurround"><a href="http://myanimelist.net/profile/Tiecie"><img src="http://cdn.myanimelist.net/images/userimages/thumbs/2386105_thumb.jpg" border="0"></a></div>
+			<div class="lightLink" style="margin-top: 3px;"><small>Yesterday, 11:10 AM</small></div></td><td width="20%" align="center" class="borderClass"><div style="margin-bottom: 3px;"><a href="http://myanimelist.net/profile/woeizjack">woeizjack</a></div>
+			<div class="picSurround"><a href="http://myanimelist.net/profile/woeizjack"><img src="http://cdn.myanimelist.net/images/userimages/thumbs/1625665_thumb.jpg" border="0"></a></div>
+			<div class="lightLink" style="margin-top: 3px;"><small>04-02-13, 8:56 PM</small></div></td><td width="20%" align="center" class="borderClass"><div style="margin-bottom: 3px;"><a href="http://myanimelist.net/profile/NeeKoo">NeeKoo</a></div>
+			<div class="picSurround"><a href="http://myanimelist.net/profile/NeeKoo"><img src="http://cdn.myanimelist.net/images/userimages/thumbs/1570345_thumb.jpg" border="0"></a></div>
+			<div class="lightLink" style="margin-top: 3px;"><small>04-02-13, 8:30 PM</small></div></td></tr><tr><td width="20%" align="center" class="borderClass"><div style="margin-bottom: 3px;"><a href="http://myanimelist.net/profile/momokokoro-chan">momokokoro-chan</a></div>
+			<div class="picSurround"><a href="http://myanimelist.net/profile/momokokoro-chan"><img src="http://cdn.myanimelist.net/images/userimages/thumbs/1058869_thumb.jpg" border="0"></a></div>
+			<div class="lightLink" style="margin-top: 3px;"><small>04-02-13, 5:45 PM</small></div></td><td width="20%" align="center" class="borderClass"><div style="margin-bottom: 3px;"><a href="http://myanimelist.net/profile/Rinda">Rinda</a></div>
+			<div class="picSurround"><a href="http://myanimelist.net/profile/Rinda"><img src="http://cdn.myanimelist.net/images/userimages/thumbs/932329_thumb.jpg" border="0"></a></div>
+			<div class="lightLink" style="margin-top: 3px;"><small>04-02-13, 5:18 AM</small></div></td><td width="20%" align="center" class="borderClass"><div style="margin-bottom: 3px;"><a href="http://myanimelist.net/profile/ZettaiRyouiki">ZettaiRyouiki</a></div>
+			<div class="picSurround"><a href="http://myanimelist.net/profile/ZettaiRyouiki"><img src="http://cdn.myanimelist.net/images/userimages/thumbs/115599_thumb.jpg" border="0"></a></div>
+			<div class="lightLink" style="margin-top: 3px;"><small>04-02-13, 12:52 AM</small></div></td><td width="20%" align="center" class="borderClass"><div style="margin-bottom: 3px;"><a href="http://myanimelist.net/profile/Tox_Hashimoto">Tox_Hashimoto</a></div>
+			<div class="picSurround"><a href="http://myanimelist.net/profile/Tox_Hashimoto"><img src="http://cdn.myanimelist.net/images/userimages/thumbs/427870_thumb.jpg" border="0"></a></div>
+			<div class="lightLink" style="margin-top: 3px;"><small>04-02-13, 12:19 AM</small></div></td><td width="20%" align="center" class="borderClass"><div style="margin-bottom: 3px;"><a href="http://myanimelist.net/profile/SaintAndrew92">SaintAndrew92</a></div>
+			<div class="picSurround"><a href="http://myanimelist.net/profile/SaintAndrew92"><img src="http://cdn.myanimelist.net/images/questionmark_50.gif" border="0"></a></div>
+			<div class="lightLink" style="margin-top: 3px;"><small>04-01-13, 5:43 PM</small></div></td></tr></table>
+		</td>
+		</tr>
+		<tr>
+			<td><br>
+			<h2>External Links</h2><a href="http://www.mangaupdates.com/series.html?id=5230" target="_blank">MangaUpdates</a>, <a href="http://en.wikipedia.org/wiki/Code_Geass" target="_blank">Wikipedia</a>
+			</td>
+			</tr>
+		</table>
+		
+</div>
+</td>
+</tr>
+</table>
+
+</div>
+
+<div id="rightcontentunder">
+
+<a href="http://myanimelist.net/modules.php?go=faq">FAQ</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://myanimelist.net/about.php">About</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://myanimelist.net/about.php?go=contact">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://www.craveonline.com/termsofuse.php?site=www.MyAnimeList.net" target="_blank">Terms</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://www.craveonline.com/privacy.php?site=www.MyAnimeList.net" target="_blank">Privacy</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a id="_bapw-link" href="#" target="_blank" style=""><img id="_bapw-icon" style="border:0 !important;display:inline !important;vertical-align:middle !important"/> <span style="vertical-align:middle !important">AdChoices</span></a><script>/*<![CDATA[*/(function(){var c=247,g=595,b=false,i=document,f=i.getElementById("_bapw-link"),a=(i.location.protocol=="https:"?"https":"http"),h=(a=="https"?"https://info.evidon.com/c/betrad/pub/":"http://cdn.betrad.com/pub/");function e(j){var d=new Image();d.src=a+"://l.betrad.com/pub/p.gif?pid="+c+"&ocid="+g+"&i"+j+"=1&r="+Math.random()}i.getElementById("_bapw-icon").src=h+"icon1.png";f.onmouseover=function(){if(/#$/.test(f.href)){f.href="http://info.evidon.com/pub_info/"+c+"?v=1"}};f.onclick=function(){var j=window._bap_p_overrides;function d(m,p){var n=i.getElementsByTagName("head")[0]||i.documentElement,l=b,k=i.createElement("script");function o(){k.onload=k.onreadystatechange=null;n.removeChild(k);p()}k.src=m;k.onreadystatechange=function(){if(!l&&(this.readyState=="loaded"||this.readyState=="complete")){l=true;o()}};k.onload=o;n.insertBefore(k,n.firstChild)}if(j&&j.hasOwnProperty(c)){if(j[c].new_window){e("c");return true}}this.onclick="return "+b;d(a+"://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js",function(){d(h+"pub2.js",function(){BAPW.i(f,{pid:c,ocid:g})})});return b};e("i")}());/*]]>*/</script>
+	
+<div id="copyright">
+&copy; 2011 All Rights Reserved. MyAnimeList.net is a property of <a href="http://www.craveonline.com">CraveOnline Media</a>, LLC.<br /> <a href="http://www.craveonline.com">CraveOnline Media</a>, LLC is a division of <a href="http://www.atomiconline.com">AtomicOnline</a>, LLC, an <a href="http://www.evolvemediacorp.com">Evolve Media</a> Corp. company.</div>
+
+</div>
+
+</div>
+
+<!--  control container height -->
+<div style="clear:both;"></div>
+
+<!-- end rightbody -->
+</div>
+
+
+</div>
+<!-- Begin comScore Tag -->
+<script>
+    document.write(unescape("%3Cscript src='" + (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js' %3E%3C/script%3E"));
+</script>
+
+<script>
+  COMSCORE.beacon({
+    c1:2,
+    c2:6036161,
+    c3:"",
+    c4:"",
+    c5:"",
+    c6:"",
+    c15:""
+  });
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=6036161&c3=&c4=&c5=&c6=&c15=&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+
+<!-- start Vibrant Media IntelliTXT script section -->
+<script type="text/javascript" src="http://myanimelist.us.intellitxt.com/intellitxt/front.asp?ipid=30532"></script>
+<!-- end Vibrant Media IntelliTXT script section -->
+	<script type="text/javascript" src="http://s.skimresources.com/js/7138X661721.skimlinks.js"></script>
+</body>
+</html>
