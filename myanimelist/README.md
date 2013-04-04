@@ -127,6 +127,32 @@ True
  'title': 'Code Geass: Hangyaku no Lelouch'}
 ```
 
+I want to use my own http client, aka. how do I use this with [Twisted]
+
+```python
+from twisted.internet import defer
+from twisted.web.client import getPage
+
+from malparser import MAL
+
+class TwistedMAL(MAL):
+    @defer.inlineCallbacks
+    def _fetch(self, obj):
+        data = yield getPage(obj._get_url())
+        obj.parse(data)
+```
+
+And how do i use that?
+```python
+>>> from twisted.internet import reactor
+>>> twistedmal = TwistedMAL()
+>>> anime = twistedmal.get_anime(1575)
+>>> anime.fetch().addCallback(lambda x:reactor.stop())
+>>> reactor.run()
+>>> anime.fetched
+True
+```
+
 Requirements
 ------------
 
@@ -142,3 +168,4 @@ See LICENSE
 
 [lxml]: http://lxml.de/
 [MyAnimeList]: http://myanimelist.net
+[Twisted]: http://twistedmatrix.com/
