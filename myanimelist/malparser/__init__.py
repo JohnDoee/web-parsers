@@ -1,1 +1,1 @@
-from malparser.anime import Anime
+from malparser.mal import MAL

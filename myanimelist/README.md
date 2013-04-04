@@ -14,8 +14,9 @@ pip install malparser
 
 This is an example of almost anything this library can:
 ```python
->>> from malparser import Anime
->>> anime = Anime(1575)
+>>> from malparser import MAL
+>>> mal = MAL()
+>>> anime = mal.get_anime(1575)
 >>> anime.fetched
 False
 >>> anime.fetch()
@@ -39,8 +40,8 @@ True
  'cover': 'http://cdn.myanimelist.net/images/anime/10/18746.jpg',
  'fetched': True,
  'info': {'Aired': 'Oct  6, 2006 to Jul  28, 2007',
-          'Duration': '24 min. per episode',
-          'Episodes': '25',
+          'Duration': 24, # Length in minutes
+          'Episodes': 25,
           'Genres': [{'id': 1, 'name': 'Action'},
                      {'id': 18, 'name': 'Mecha'},
                      {'id': 23, 'name': 'School'},

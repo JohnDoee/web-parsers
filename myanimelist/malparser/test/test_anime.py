@@ -4,20 +4,20 @@ import datetime
 from decimal import Decimal
 
 from malparser.anime import Anime
+from malparser.mal import MAL
 
 test_files = os.path.join(os.path.dirname(__file__), 'testfiles')
 
 from pprint import pprint
 
-class AnimeDummy(Anime):
-    def fetch(self):
-        f = os.path.join(test_files, '%s.html' % self.mal_id)
-        self.parse(open(f).read())
-
+class MALDummy(MAL):
+    def _fetch(self, obj):
+        f = os.path.join(test_files, '%s.html' % obj.mal_id)
+        obj.parse(open(f).read())
 
 class TestAnime(unittest.TestCase):
     def test_title_encoding(self):
-        anime = AnimeDummy(1887)
+        anime = Anime(1887, MALDummy())
         self.assertFalse(anime.fetched, 'Anime is not yet fetched')
         anime.fetch()
         self.assertTrue(anime.fetched, 'Anime should be fetched')
@@ -71,11 +71,11 @@ class TestAnime(unittest.TestCase):
         self.assertEqual(anime.related_anime['Spin-off'][0].mal_id, 17637, 'Wrong spin-offs related anime found')
 
     def test_mixed_encoding_html(self):
-        anime = AnimeDummy(2904)
+        anime = Anime(2904, MALDummy())
         anime.fetch()
         self.assertEqual(anime.title, 'Code Geass: Hangyaku no Lelouch R2', 'Was not fetched properly')
     
     def test_long_anime(self):
-        anime = AnimeDummy(585)
+        anime = Anime(585, MALDummy())
         anime.fetch()
         self.assertEqual(anime.info['Duration'], 111, 'Wrong duration found')

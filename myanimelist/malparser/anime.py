@@ -10,15 +10,16 @@ class Anime(object):
     fetched = False
     base_url = 'http://myanimelist.net/anime/%s/'
     
-    def __init__(self, mal_id):
+    def __init__(self, mal_id, mal):
         self.mal_id = mal_id
+        self.mal = mal
     
     def _get_url(self):
         return self.base_url % self.mal_id
     
     def fetch(self):
-        data = urllib.urlopen(self._get_url()).read()
-        self.parse(data)
+        if not self.fetched:
+            return self.mal._fetch(self)
     
     def parse_date(self, d):
         if '?' in d:
@@ -138,7 +139,7 @@ class Anime(object):
                     continue
                 
                 if href[3] == 'anime':
-                    related_anime[current_tag].append(Anime(int(href[4])))
+                    related_anime[current_tag].append(Anime(int(href[4]), self.mal))
                 elif href[3] == 'manga':
                     pass # not implemented
                 else:

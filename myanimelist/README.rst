@@ -6,7 +6,7 @@ lots more features than un-official API
 
 Help and stuff
 --------------
-https://github.com/JohnDoee
+https://github.com/JohnDoee (there is an email here)
 
 Examples
 --------

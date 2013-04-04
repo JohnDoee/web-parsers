@@ -3,12 +3,12 @@
 from distutils.core import setup
 
 setup(name='malparser',
-      version='1.1',
+      version='1.2',
       description='Python package to access the MyAnimeList Anime',
       long_description=open('README.rst').read(),
       author='Anders Jensen',
       license='MIT',
-      author_email='andersandjensen+webparsers@gmail.com',
+      author_email='johndoee+malparser@tidalstream.org',
       url='https://github.com/JohnDoee/',
       packages=['malparser', 'malparser.test'],
       package_data={'malparser.test': ['testfiles/*.html']},
