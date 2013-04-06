@@ -115,7 +115,10 @@ class Base(object):
                 related[current_tag].append({'type': href[3], 'id': int(href[4])})
             
             if el.tag == 'br':
-                current_tag = next(tags)
+                try:
+                    current_tag = next(tags)
+                except StopIteration:
+                    break
         
         self.mal._handle_related(self)
         

@@ -162,6 +162,10 @@ More stuff and contact
 ----------------------
 See http://github.com/JohnDoee for anything you might need
 
+Versioning
+----------
+Follows: [Semantic Versioning]
+
 License
 --------
 See LICENSE
@@ -169,3 +173,4 @@ See LICENSE
 [lxml]: http://lxml.de/
 [MyAnimeList]: http://myanimelist.net
 [Twisted]: http://twistedmatrix.com/
+[Semantic Versioning]: http://semver.org/
