@@ -107,7 +107,6 @@ class Base(object):
                 if current_tag not in related:
                     related[current_tag] = []
                 
-                print el
                 href = el.attrib['href'].split('/')
                 
                 if not el.xpath('text()') or not href:
