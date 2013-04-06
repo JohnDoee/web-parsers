@@ -100,12 +100,14 @@ class Base(object):
             if el.tag == 'h2':
                 if found_h2:
                     break
-                found_h2 = True
+                if el.text in ['Related Anime', 'Related Manga']:
+                    found_h2 = True
             
-            if el.tag == 'a':
+            if el.tag == 'a' and found_h2:
                 if current_tag not in related:
                     related[current_tag] = []
                 
+                print el
                 href = el.attrib['href'].split('/')
                 
                 if not el.xpath('text()') or not href:

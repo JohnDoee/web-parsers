@@ -58,19 +58,6 @@ class TestManga(unittest.TestCase):
         
         self.assertEqual(manga.synopsis, "The Empire of Brittania has invaded Japan using giant robot weapons called Knightmare Frames. Japan is now referred to as Area 11, and its people the 11s. A Brittanian who was living in Japan at the time, Lelouch, vowed to his Japanese friend Suzaku that he'd destroy Brittania. Years later, Lelouch is in high school, but regularly skips out of school to go play chess and gamble on himself.",
                          'Synopsis was parsed incorrectly')
-#
-#{'Adaptation': [Anime(mal_id=1575), Anime(mal_id=2904)],
-#             'Alternative setting': [Manga(mal_id=10167),
-#                                     Manga(mal_id=25854)],
-#             'Alternative version': [Manga(mal_id=1547),
-#                                     Manga(mal_id=1530),
-#                                     Manga(mal_id=11496)],
-#             'Prequel': [Manga(mal_id=17311)],
-#             'Spin-off': [Manga(mal_id=11968),
-#                          Manga(mal_id=12042),
-#                          Manga(mal_id=10822)]},
-
-
 
         self.assertEqual(sorted(manga.related.keys()), ['Adaptation', 'Alternative setting', 'Alternative version', 'Prequel', 'Spin-off'], 'Wrong related manga types found')
         self.assertEqual(len(manga.related['Adaptation']), 2, 'Wrong number of adaptations found')
