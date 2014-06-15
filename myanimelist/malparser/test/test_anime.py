@@ -79,11 +79,15 @@ class TestAnime(unittest.TestCase):
         self.assertIsInstance(anime.related['Spin-off'][0], Anime, 'Wrong type of spin-offs related anime found')
 
     def test_mixed_encoding_html(self):
-        anime = MALDummy().get_manga(2904)
+        anime = MALDummy().get_anime(2904)
         anime.fetch()
         self.assertEqual(anime.title, 'Code Geass: Hangyaku no Lelouch R2', 'Was not fetched properly')
     
     def test_long_anime(self):
-        anime = MALDummy().get_manga(585)
+        anime = MALDummy().get_anime(585)
         anime.fetch()
         self.assertEqual(anime.info['Duration'], 111, 'Wrong duration found')
+    
+    def test_failing_anime(self):
+        anime = MALDummy().get_anime(20431)
+        anime.fetch()

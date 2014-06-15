@@ -112,7 +112,14 @@ class Base(object):
                 if not el.xpath('text()') or not href:
                     continue
                 
-                related[current_tag].append({'type': href[3], 'id': int(href[4])})
+                if href[0].lower().startswith('http'):
+                    tag_type = href[3]
+                    tag_id = href[4]
+                else:
+                    tag_type = href[1]
+                    tag_id = href[2]
+                
+                related[current_tag].append({'type': tag_type, 'id': int(tag_id)})
             
             if el.tag == 'br':
                 try:
