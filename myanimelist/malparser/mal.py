@@ -1,11 +1,18 @@
-import urllib
+import urllib2
 
 from malparser.anime import Anime
 from malparser.manga import Manga
 
+HEADERS = {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en",
+    "User-Agent": "Scrapy/0.24.2 (+http://scrapy.org)",
+}
+
 class MAL(object):
     def _fetch(self, obj):
-        data = urllib.urlopen(obj._get_url()).read()
+        req = urllib2.Request(obj._get_url(), None, HEADERS)
+        data = urllib2.urlopen(req).read()
         obj.parse(data)
     
     def _handle_related(self, obj):
