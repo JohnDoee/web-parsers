@@ -32,6 +32,7 @@ class Base(object):
         self.alternative_titles = alternative_titles = {}
         self.statistics = statistics = {}
         self.related = related = {}
+        self.reviews = []
         
         def duration2int(x):
             runtime = 0
@@ -128,5 +129,15 @@ class Base(object):
                     break
         
         self.mal._handle_related(self)
+        
+        for review in tree.xpath('//h2[contains(text(), "Reviews")]/following-sibling::*//div[contains(@class, "reviewDetails")]'):
+            rating = int(review.xpath('.//a[text()="Overall Rating"]/../text()')[0].strip(': '))
+            review = ''.join(review.xpath('following-sibling::div/text()')).strip() + '\n'.join(review.xpath('following-sibling::div/span/text()')).strip()
+            review = review.replace('\n\n', '\n')
+            
+            self.reviews.append({
+                'rating': rating,
+                'review': review
+            })
         
         self.fetched = True
