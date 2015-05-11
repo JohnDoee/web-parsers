@@ -101,7 +101,9 @@ class Base(object):
             if el.tag == 'h2':
                 if found_h2:
                     break
-                if el.text in ['Related Anime', 'Related Manga']:
+                
+                subel = el.xpath('text()')
+                if subel and subel[0] in ['Related Anime', 'Related Manga']:
                     found_h2 = True
             
             if el.tag == 'a' and found_h2:
