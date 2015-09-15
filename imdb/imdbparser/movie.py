@@ -28,7 +28,9 @@ class Movie(Base):
         
         person_map = {
             'Director:': self.directors,
+            'Directors:': self.directors,
             'Writer:': self.writers,
+            'Writers:': self.writers,
         }
         
         self.duration = None
@@ -37,14 +39,37 @@ class Movie(Base):
         self.title = titles[0]
         if self.title[0] == self.title[-1] == '"':
             self.title = self.title[1:-1]
+
+        title_extra = self.tree.xpath("//h1/span[@class='title-extra']")
+        if title_extra:
+             extra_title = title_extra[0].text.strip()
+             if extra_title[0] == extra_title[-1] == '"':
+                 extra_title = extra_title[1:-1]
+
+             if title_extra[0].xpath(".//i[text()='(original title)']"):
+                 self.alternative_titles.append(self.title)
+                 self.title = extra_title
+             else:
+                 self.alternative_titles.append(extra_title)
         
-        self.year = int(titles[1].strip(u'()').split(u'\u2013')[0])
+        for t in titles[1:]:
+            try:
+                self.year = int(t.strip(u'()').split(u'\u2013')[0])
+            except ValueError:
+                continue
+            else:
+                break
         
         self.rating = float(self.tree.xpath("//span[@itemprop='ratingValue']/text()")[0])
         self.votes = int(self.tree.xpath("//span[@itemprop='ratingCount']/text()")[0].replace(',', ''))
         
-        self.description = self.tree.xpath("//td[@id='overview-top']//p[@itemprop='description']/text()")[0].strip()
-        self.plot = self.tree.xpath("//div[@id='titleStoryLine']//div[@itemprop='description']/p/text()")[0].strip()
+        self.description = self.tree.xpath("//td[@id='overview-top']//p[@itemprop='description']/text()") or None
+        if self.description:
+            self.description = self.description[0].strip()
+        
+        self.plot = self.tree.xpath("//div[@id='titleStoryLine']//div[@itemprop='description']/p/text()") or None
+        if self.plot:
+            self.plot = self.plot[0].strip()
         
         for element in self.tree.xpath("//div[@class='txt-block']"):
             key = element.xpath('./h4/text()')
@@ -52,7 +77,7 @@ class Movie(Base):
                 continue
             
             key = key[0]
-            if key in ['Director:', 'Writer:']:
+            if key in person_map.keys():
                 for person in element.xpath('./a'):
                     person = self._extract_person(person)
                     if not person:
@@ -70,6 +95,8 @@ class Movie(Base):
                 self.languages = element.xpath('./a/text()')
             elif key == 'Also Known As:':
                 self.alternative_titles.append(element.xpath('./text()')[1].strip())
+        
+        self.alternative_titles = list(set(self.alternative_titles))
         
         for person in self.tree.xpath("//div[@id='titleCast']//table[@class='cast_list']//tr/td[@itemprop='actor']/a"):
             person = self._extract_person(person)
