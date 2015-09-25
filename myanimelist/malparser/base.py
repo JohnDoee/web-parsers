@@ -24,9 +24,11 @@ class Base(object):
         # Anyways, anything we need is (hopefully) in utf-8
         tree = lxml.html.fromstring(html.decode('utf-8', errors='ignore')) 
         
-        self.title = tree.xpath('//div[@id="contentWrapper"]/h1/text()')[0].strip()
-        self.synopsis = tree.xpath('//h2[text()="Synopsis"]/../text()')[0].strip()
-        self.cover = tree.xpath('//div[@id="content"]//img')[0].attrib['src']
+        schema = tree.xpath('//div[@itemtype="http://schema.org/TVSeries"]')[0]
+        
+        self.title = schema.xpath('.//span[@itemprop="name"]/text()')[0].strip()
+        self.synopsis = schema.xpath('.//span[@itemprop="description"]/text()')[0].strip()
+        self.cover = schema.xpath('.//img[@itemprop="image"]')[0].attrib['src']
         
         self.info = info = {}
         self.alternative_titles = alternative_titles = {}
@@ -63,8 +65,8 @@ class Base(object):
         
         loop_elements = [
             ('Alternative Titles', True, [], alternative_titles, {}),
-            ('Information', False, ['Producers', 'Genres', 'Authors', 'Serialization'], info, {'Episodes': num2int, 'Duration': duration2int, 'Volumes': num2int, 'Chapters': num2int}),
-            ('Statistics', False, [], statistics, {'Favorites': num2int, 'Members': num2int, 'Popularity': strip2int, 'Ranked': strip2int, 'Score': num2dec}),
+            ('Information', False, ['Producers', 'Authors', 'Serialization'], info, {'Episodes': num2int, 'Duration': duration2int, 'Volumes': num2int, 'Chapters': num2int}),
+            ('Statistics', False, [], statistics, {'Favorites': num2int, 'Members': num2int, 'Popularity': strip2int, 'Ranked': strip2int}),
         ]
         
         for block, splitlist, linklist, save_target, postprocess in loop_elements:
@@ -72,63 +74,87 @@ class Base(object):
                 if el.tag != 'div' or not el.xpath('span') or ':' not in el.xpath('span/text()')[0]:
                     break
                 
+                text = ''.join(el.xpath('text()')).strip()
                 info_type = el.xpath('span/text()')[0].strip(':')
                 if info_type in linklist:
                     save_target[info_type] = []
                     
-                    if 'None found' not in el.xpath('text()')[0]:
+                    if 'None found' not in text:
                         for a in el.xpath('a'):
                             save_target[info_type].append({
                                 'id': int(re.findall('\d+', a.attrib['href'])[0]),
                                 'name': a.text
                             })
                 else:
-                    save_target[info_type] = el.xpath('text()')[0].strip()
+                    save_target[info_type] = text.strip()
                     if splitlist:
                         save_target[info_type] = map(lambda x:x.strip(), save_target[info_type].split(','))
                     elif info_type in postprocess:
                         save_target[info_type] = postprocess[info_type](save_target[info_type])
+                
         
-        votes = re.findall(r'scored by (\d+) users', html)
+        votes = tree.xpath('//span[@itemprop="ratingCount"]/text()')
         if votes:
-            statistics['Votes'] = int(votes[0])
+            statistics['Votes'] = int(votes[0].replace(',', ''))
+        
+        score = tree.xpath('//span[@itemprop="ratingValue"]/text()')
+        if score:
+            statistics['Score'] = num2dec(score[0])
+        
+        genres = info['Genres'] = []
+        for genre in tree.xpath('//span[@itemprop="genre"]/a'):
+            genres.append({
+                'id': int(re.findall('\d+', genre.attrib['href'])[-1]),
+                'name': genre.text
+            })
+        
         
         found_h2 = False
         tags = iter(filter(lambda x:x, map(lambda x:x.strip(': ,'), tree.xpath('//h2[starts-with(text(), "Related ")]/../text()'))))
         current_tag = None
         
-        for el in tree.xpath('//h2[starts-with(text(), "Related ")]/../*'):
-            if el.tag == 'h2':
-                if found_h2:
-                    break
-                
-                subel = el.xpath('text()')
-                if subel and subel[0] in ['Related Anime', 'Related Manga']:
-                    found_h2 = True
-            
-            if el.tag == 'a' and found_h2:
-                if current_tag not in related:
-                    related[current_tag] = []
-                
-                href = el.attrib['href'].split('/')
-                
-                if not el.xpath('text()') or not href:
-                    continue
-                
-                if href[0].lower().startswith('http'):
-                    tag_type = href[3]
-                    tag_id = href[4]
-                else:
-                    tag_type = href[1]
-                    tag_id = href[2]
-                
-                related[current_tag].append({'type': tag_type, 'id': int(tag_id)})
-            
-            if el.tag == 'br':
-                try:
-                    current_tag = next(tags)
-                except StopIteration:
-                    break
+        for el in tree.xpath('//table[@class="anime_detail_related_anime"]/tr'):
+            name, relationships = el.xpath('./td')
+            name = name.text.strip(':')
+            related[name] = []
+            for r in relationships.xpath('./a'):
+                url = r.attrib['href'].split('/')
+                tag_type = url[1]
+                tag_id = url[2]
+                related[name].append({'type': tag_type, 'id': int(tag_id)})
+        
+        # for el in tree.xpath('//h2[starts-with(text(), "Related ")]/../*'):
+        #     if el.tag == 'h2':
+        #         if found_h2:
+        #             break
+        #         
+        #         subel = el.xpath('text()')
+        #         if subel and subel[0] in ['Related Anime', 'Related Manga']:
+        #             found_h2 = True
+        #     
+        #     if el.tag == 'a' and found_h2:
+        #         if current_tag not in related:
+        #             related[current_tag] = []
+        #         
+        #         href = el.attrib['href'].split('/')
+        #         
+        #         if not el.xpath('text()') or not href:
+        #             continue
+        #         
+        #         if href[0].lower().startswith('http'):
+        #             tag_type = href[3]
+        #             tag_id = href[4]
+        #         else:
+        #             tag_type = href[1]
+        #             tag_id = href[2]
+        #         
+        #         related[current_tag].append({'type': tag_type, 'id': int(tag_id)})
+        #     
+        #     if el.tag == 'br':
+        #         try:
+        #             current_tag = next(tags)
+        #         except StopIteration:
+        #             break
         
         self.mal._handle_related(self)
         
