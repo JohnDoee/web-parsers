@@ -40,6 +40,7 @@ class TestAnime(unittest.TestCase):
                                                  {'id': 20, 'name': 'Parody'},
                                                  {'id': 23, 'name': 'School'},
                                                  {'id': 36, 'name': 'Slice of Life'}],
+                                      'Premiered': {'season': 'Spring', 'year': '2007'},
                                       'Producers': [{'id': 2, 'name': 'Kyoto Animation'},
                                                     {'id': 102, 'name': 'FUNimation Entertainment'},
                                                     {'id': 104, 'name': 'Lantis'},
@@ -51,12 +52,12 @@ class TestAnime(unittest.TestCase):
                                       'Type': 'TV'},
                          'Infobox was parsed incorrectly')
         
-        self.assertEqual(anime.statistics, {'Favorites': 7341,
-                                            'Members': 245845,
-                                            'Popularity': 61,
-                                            'Ranked': 602,
+        self.assertEqual(anime.statistics, {'Favorites': 7364,
+                                            'Members': 247710,
+                                            'Popularity': 62,
+                                            'Ranked': 604,
                                             'Score': Decimal('7.94'),
-                                            'Votes': 134616},
+                                            'Votes': 135476},
                          'Statistics box was parsed incorrectly')
         
         self.assertEqual(anime.synopsis, u'Having fun in school, doing homework together, cooking and eating, playing videogames, watching anime. All those little things make up the daily life of the anime\u2014and chocolate-loving\u2014Izumi Konata and her friends. Sometimes relaxing but more than often simply funny!',

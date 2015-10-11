@@ -27,12 +27,12 @@ class TestManga(unittest.TestCase):
         self.assertEqual(manga.alternative_titles, {'English': ['Code Geass: Lelouch of the Rebellion'],
                                                     'Japanese': [u'\u30b3\u30fc\u30c9\u30ae\u30a2\u30b9 \u53cd\u9006\u306e\u30eb\u30eb\u30fc\u30b7\u30e5']},
                          'Incorrect alternative titles found')
-        
-        self.assertEqual(manga.cover, 'http://cdn.myanimelist.net/images/manga/5/27730.jpg', 'Wrong cover URL')
+        from pprint import pprint; pprint(manga.statistics)
+        self.assertEqual(manga.cover, 'http://cdn.myanimelist.net/images/manga/3/121659.jpg', 'Wrong cover URL')
         self.assertEqual(manga.info, {'Authors': [{'id': 3066, 'name': 'Taniguchi, Goro'},
                                                   {'id': 3067, 'name': 'Okouchi, Ichiro'},
                                                   {'id': 3081, 'name': 'Majiko!'}],
-                                      'Chapters': 38,
+                                      'Chapters': 40,
                                       'Genres': [{'id': 1, 'name': 'Action'},
                                                  {'id': 8, 'name': 'Drama'},
                                                  {'id': 18, 'name': 'Mecha'},
@@ -41,7 +41,7 @@ class TestManga(unittest.TestCase):
                                                  {'id': 25, 'name': 'Shoujo'},
                                                  {'id': 37, 'name': 'Supernatural'},
                                                  {'id': 38, 'name': 'Military'}],
-                                      'Published': 'Oct 2006 to 2010',
+                                      'Published': 'Aug  24, 2006 to Feb  24, 2010',
                                       'Serialization': [{'id': 14, 'name': 'Asuka (Monthly)'}],
                                       'Status': 'Finished',
                                       'Type': 'Manga',
@@ -52,8 +52,8 @@ class TestManga(unittest.TestCase):
                                             'Members': 6923,
                                             'Popularity': 293,
                                             'Ranked': 2109,
-                                            'Score': Decimal('7.74'),
-                                            'Votes': 3180},
+                                            'Score': Decimal('7.71'),
+                                            'Votes': 4300},
                          'Statistics box was parsed incorrectly')
         
         self.assertEqual(manga.synopsis, "The Empire of Brittania has invaded Japan using giant robot weapons called Knightmare Frames. Japan is now referred to as Area 11, and its people the 11s. A Brittanian who was living in Japan at the time, Lelouch, vowed to his Japanese friend Suzaku that he'd destroy Brittania. Years later, Lelouch is in high school, but regularly skips out of school to go play chess and gamble on himself.",

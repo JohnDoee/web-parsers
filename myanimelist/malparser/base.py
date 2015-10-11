@@ -65,7 +65,7 @@ class Base(object):
         
         loop_elements = [
             ('Alternative Titles', True, [], alternative_titles, {}),
-            ('Information', False, ['Producers', 'Authors', 'Serialization'], info, {'Episodes': num2int, 'Duration': duration2int, 'Volumes': num2int, 'Chapters': num2int}),
+            ('Information', False, ['Producers', 'Genres', 'Authors', 'Serialization'], info, {'Episodes': num2int, 'Duration': duration2int, 'Volumes': num2int, 'Chapters': num2int}),
             ('Statistics', False, [], statistics, {'Favorites': num2int, 'Members': num2int, 'Popularity': strip2int, 'Ranked': strip2int}),
         ]
         
@@ -82,9 +82,16 @@ class Base(object):
                     if 'None found' not in text:
                         for a in el.xpath('a'):
                             save_target[info_type].append({
-                                'id': int(re.findall('\d+', a.attrib['href'])[0]),
+                                'id': int(re.findall('\d+', a.attrib['href'])[-1]),
                                 'name': a.text
                             })
+                elif info_type == 'Premiered':
+                    premiered = el.xpath('./a/text()')[0].split(' ')
+                    if premiered:
+                        save_target[info_type] = {
+                            'season': premiered[0],
+                            'year': premiered[1],
+                        }
                 else:
                     save_target[info_type] = text.strip()
                     if splitlist:
@@ -100,20 +107,6 @@ class Base(object):
         score = tree.xpath('//span[@itemprop="ratingValue"]/text()')
         if score:
             statistics['Score'] = num2dec(score[0])
-        
-        genres = info['Genres'] = []
-        for genre in tree.xpath('//span[@itemprop="genre"]/a'):
-            genres.append({
-                'id': int(re.findall('\d+', genre.attrib['href'])[-1]),
-                'name': genre.text
-            })
-        
-        for genre in tree.xpath('//a[./span[@itemprop="genre"]]'):
-            genres.append({
-                'id': int(re.findall('\d+', genre.attrib['href'])[-1]),
-                'name': genre.xpath('./span')[0].text
-            })
-        
         
         found_h2 = False
         tags = iter(filter(lambda x:x, map(lambda x:x.strip(': ,'), tree.xpath('//h2[starts-with(text(), "Related ")]/../text()'))))
