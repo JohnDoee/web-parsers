@@ -13,13 +13,14 @@ class Anime(Base):
             return None
         
         d = d.strip()
-        spaces = len(d.split(' '))
-        if spaces == 1:
-            return datetime.strptime(d, '%Y').date()
-        elif spaces == 2:
-            return datetime.strptime(d, '%b %Y').date()
-        else:
-            return datetime.strptime(d, '%b  %d, %Y').date()
+        if d != 'Not available':
+            spaces = len(d.split(' '))
+            if spaces == 1:
+                return datetime.strptime(d, '%Y').date()
+            elif spaces == 2:
+                return datetime.strptime(d, '%b, %Y').date()
+            else:
+                return datetime.strptime(d, '%b  %d, %Y').date()
     
     def get_season(self, d):
         if d.month in [2, 3, 4]:
@@ -50,7 +51,8 @@ class Anime(Base):
                 aired['Aired_start'] = self.parse_date(aired['Aired_start'])
                 aired['Aired_end'] = self.parse_date(aired['Aired_end'])
                 
-                aired['Season'] = self.get_season(aired['Aired_start'])
+                if aired['Aired_start']:
+                    aired['Season'] = self.get_season(aired['Aired_start'])
 
     def __repr__(self):
         return 'Anime(mal_id=%r)' % self.mal_id

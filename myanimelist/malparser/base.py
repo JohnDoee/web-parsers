@@ -27,7 +27,11 @@ class Base(object):
         schema = tree.xpath('//div[@id="contentWrapper"]')[0]
         
         self.title = schema.xpath('.//span[@itemprop="name"]/text()')[0].strip()
-        self.synopsis = schema.xpath('.//span[@itemprop="description"]/text()')[0].strip()
+        synopsis = schema.xpath('.//span[@itemprop="description"]/text()')
+        if synopsis:
+            self.synopsis = synopsis[0].strip()
+        else:
+            self.synopsis = ''
         self.cover = schema.xpath('.//img[@itemprop="image"]')[0].attrib['src']
         
         self.info = info = {}
@@ -65,7 +69,7 @@ class Base(object):
         
         loop_elements = [
             ('Alternative Titles', True, [], alternative_titles, {}),
-            ('Information', False, ['Producers', 'Genres', 'Authors', 'Serialization'], info, {'Episodes': num2int, 'Duration': duration2int, 'Volumes': num2int, 'Chapters': num2int}),
+            ('Information', False, ['Producers', 'Genres', 'Authors', 'Serialization', 'Licensors', 'Studios'], info, {'Episodes': num2int, 'Duration': duration2int, 'Volumes': num2int, 'Chapters': num2int}),
             ('Statistics', False, [], statistics, {'Favorites': num2int, 'Members': num2int, 'Popularity': strip2int, 'Ranked': strip2int}),
         ]
         
@@ -85,12 +89,20 @@ class Base(object):
                                 'id': int(re.findall('\d+', a.attrib['href'])[-1]),
                                 'name': a.text
                             })
+                elif info_type == 'Type':
+                    save_target[info_type] = el.xpath('./a/text()')[0]
                 elif info_type == 'Premiered':
                     premiered = el.xpath('./a/text()')[0].split(' ')
                     if premiered:
+                        year = premiered[1]
+                        try:
+                            year = int(premiered[1])
+                        except ValueError:
+                            pass
+                        
                         save_target[info_type] = {
                             'season': premiered[0],
-                            'year': premiered[1],
+                            'year': year,
                         }
                 else:
                     save_target[info_type] = text.strip()
@@ -100,13 +112,25 @@ class Base(object):
                         save_target[info_type] = postprocess[info_type](save_target[info_type])
                 
         
+        score_box = tree.xpath('//div[./span[text()="Score:"]]/span')
+        
         votes = tree.xpath('//span[@itemprop="ratingCount"]/text()')
         if votes:
-            statistics['Votes'] = int(votes[0].replace(',', ''))
+            statistics['Votes'] = votes[0]
+        else:
+            statistics['Votes'] = score_box[2].xpath('./text()')[0]
+        
+        if 'Votes' in statistics:
+            statistics['Votes'] = int(statistics['Votes'].replace(',', ''))
         
         score = tree.xpath('//span[@itemprop="ratingValue"]/text()')
         if score:
-            statistics['Score'] = num2dec(score[0])
+            statistics['Score'] = score[0]
+        else:
+            statistics['Score'] = score_box[1].xpath('./text()')[0]
+        
+        if 'Score' in statistics:
+            statistics['Score'] = num2dec(statistics['Score'])
         
         found_h2 = False
         tags = iter(filter(lambda x:x, map(lambda x:x.strip(': ,'), tree.xpath('//h2[starts-with(text(), "Related ")]/../text()'))))
