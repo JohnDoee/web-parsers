@@ -94,7 +94,7 @@ class Base(object):
                                 'name': a.text
                             })
                 elif info_type == 'Type':
-                    save_target[info_type] = el.xpath('./a/text()')[0]
+                    save_target[info_type] = str(el.xpath('./a/text()')[0])
                 elif info_type == 'Premiered':
                     premiered = el.xpath('./a/text()')[0].split(' ')
                     if premiered:
