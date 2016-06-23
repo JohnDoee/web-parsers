@@ -32,7 +32,11 @@ class Base(object):
             self.synopsis = synopsis[0].strip()
         else:
             self.synopsis = ''
-        self.cover = schema.xpath('.//img[@itemprop="image"]')[0].attrib['src']
+        self.cover = schema.xpath('.//img[@itemprop="image"]')[0]
+        if 'data-src' in self.cover.attrib:
+            self.cover = self.cover.attrib['data-src']
+        else:
+            self.cover = self.cover.attrib['src']
         
         self.info = info = {}
         self.alternative_titles = alternative_titles = {}
@@ -148,7 +152,7 @@ class Base(object):
         
         self.mal._handle_related(self)
         
-        for review in tree.xpath('//h2[contains(text(), "Reviews")]/following-sibling::*//div[contains(@class, "reviewDetails")]'):
+        for review in tree.xpath('//h2[contains(text(), "Reviews")]/following-sibling::*//div[contains(@class, "borderLight")]'):
             rating = int(review.xpath('.//a[text()="Overall Rating"]/../text()')[0].strip(': '))
             review = ''.join(review.xpath('following-sibling::div/text()')).strip() + '\n'.join(review.xpath('following-sibling::div/span/text()')).strip()
             review = review.replace('\n\n', '\n')
