@@ -1,5 +1,5 @@
+import decimal
 import re
-from decimal import Decimal
 
 import lxml.html
 
@@ -68,7 +68,12 @@ class Base(object):
             except ValueError:
                 return None
 
-        num2dec = lambda x:Decimal(x)
+        def num2dec(x):
+            try:
+                return decimal.Decimal(x)
+            except decimal.InvalidOperation:
+                return None
+
         strip2int = lambda x: x != 'N/A' and int(x.strip('#')) or None
 
         loop_elements = [
